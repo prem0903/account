@@ -21,7 +21,7 @@ public class BalanceCheckValidator {
 
     public void checkBalance(String accountId, BigDecimal balance) {
         Account account = accountsRepository.getAccount(accountId);
-        if (account.getBalance().compareTo(balance) != 1) {
+        if (account.getBalance().compareTo(balance)  == -1) {
             throw new InsufficientBalanceException(messageSource.getMessage
                     ("Insufficient Balance" + account.getBalance() + " In This Account" + accountId + " ",
                             null, Locale.getDefault()));

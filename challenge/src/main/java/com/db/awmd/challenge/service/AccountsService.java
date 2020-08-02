@@ -30,9 +30,8 @@ public class AccountsService {
   public Account getAccount(String accountId) {
     return this.accountsRepository.getAccount(accountId);
   }
-  
-  public void updateAccount(Transaction transaction){
 
+  public void updateAccount(Transaction transaction){
     debitBalance(transaction.getBalance(), transaction.getFromAccountId());
     creditBalance(transaction.getBalance(), transaction.getToAccountId());
   }
