@@ -31,6 +31,7 @@ public class AccountsService {
     return this.accountsRepository.getAccount(accountId);
   }
 
+   @Transactional
   public void updateAccount(Transaction transaction){
     debitBalance(transaction.getBalance(), transaction.getFromAccountId());
     creditBalance(transaction.getBalance(), transaction.getToAccountId());
