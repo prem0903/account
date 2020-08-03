@@ -1,25 +1,16 @@
-# account
-add updateBalance api
+# Account Application
 
-Dev Challenge (Short)
-The Asset Management Digital Challenge
-We are providing you with a simple REST service with some very basic functionality - to add and read an account.
+Account Application which is used for the create account and transfer the balance between two accounts.
+We have added the below REST APIs
+ 1) create account
+ 2) Get account 
+ 3) upadte account(debit and credit)
+I have added validation package for check insufficient balance while teansfer money between two accounts
+Upadte account api will be used by many user simultaneously hence we used lock inetrface for data consistency
 
-It is a standard gradle project, running on Spring Boot. It uses Lombok and if you've not come across it before you'll need to configure your
-
-IDE to use it (otherwise code will not compile).
-Your task is to add functionality for a transfer of money between accounts. Transfers should be specified by providing:
-accountFrom id
-accountTo id
-amount to transfer between accounts
-
-The amount to transfer should always be a positive number.
-It should not be possible for an account to end up with negative balance (we do not support overdrafts!)
-Whenever a transfer is made, a notification should be sent to both account holders, with a message containing id of the other account and
-amount transferred.
-For this purpose please use the NotificationService interface
-Do not use the provided (simple) implementation in your tests - it is provided for the main application to run. In your tests you should mock this service. 
-
-
-I have added one method for debit and credit(updateAccount) in account controller class.
-Added BalanceCheckValidator for check insufficient balance
+Improvement Area 
+ 1)Define standard the status code for each validation 
+ 2)before calling service need to added bussiness validation,so need to add validation framework  
+ 
+ 
+ 
